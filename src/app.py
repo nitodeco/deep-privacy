@@ -2,7 +2,7 @@ import streamlit as st
 import time
 
 st.set_page_config(
-    page_title="Deep-privacy",
+    page_title="Deep Privacy",
     page_icon="🔒",
     layout="centered",
     initial_sidebar_state="collapsed",
