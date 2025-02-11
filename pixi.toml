@@ -8,6 +8,7 @@ version = "0.1.0"
 
 [tasks]
 ui = "streamlit run src/app.py"
+cli = "python3 src/cli.py"
 
 [dependencies]
 black = ">=25.1.0,<26"

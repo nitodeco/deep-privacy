@@ -46,6 +46,7 @@ def generate_privacy_report(service: str) -> str:
 
 def save_report(service: str, summary: str):
     save_to_file(f"{service}.md", summary, "reports")
+    logger.info(f"Saved report for {service} to reports/{service}.md")
 
 
 def summarize(text: str) -> str:
