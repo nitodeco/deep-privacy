@@ -6,9 +6,15 @@ Deep-privacy is a tool for creating privacy reports about online tools. It uses 
 
 This project uses [pixi](https://pixi.sh/latest/) for dependency management.
 
+To start off, set your OpenAI API key in <code>.env</code>.
+
+Install dependencies:
+
 ```bash
 pixi install
 ```
+
+Start the UI:
 
 ```bash
 pixi run ui
