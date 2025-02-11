@@ -33,7 +33,9 @@ def generate_privacy_report(service: str) -> str:
         f"Finished processing questions for {service} in {time.time() - start_time} seconds"
     )
     start_time = time.time()
-    summary = summarize(join_strings(answers))
+    summary = summarize(
+        f"The service is called {service}. Information: {join_strings(answers)}"
+    )
     logger.info(f"Finished summarizing {service} in {time.time() - start_time} seconds")
     logger.info(
         f"Finished generating privacy report for {service} in {time.time() - total_start_time} seconds"
