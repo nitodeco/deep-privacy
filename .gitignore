@@ -1,4 +1,7 @@
-
-# pixi environments
 .pixi
 *.egg-info
+.env
+*.log
+chroma_db/
+*.sqlite3
+__pycache__/
