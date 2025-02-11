@@ -12,7 +12,7 @@ from services.ai import generate_completion, generate_structured_completion
 from services.scraper import extract_text_from_websites
 from services.search import search
 from services.db import create_service_collection, add_documents, query
-from services.utils import join_strings
+from services.utils import join_strings, save_to_file
 import services.logger as logger
 import time
 
@@ -40,7 +40,12 @@ def generate_privacy_report(service: str) -> str:
     logger.info(
         f"Finished generating privacy report for {service} in {time.time() - total_start_time} seconds"
     )
+    save_report(service, summary)
     return summary
+
+
+def save_report(service: str, summary: str):
+    save_to_file(f"{service}.md", summary, "reports")
 
 
 def summarize(text: str) -> str:
