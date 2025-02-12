@@ -50,7 +50,7 @@ def save_report(service: str, summary: str):
 
 
 def summarize(text: str) -> str:
-    response = generate_completion(summarize_prompt, text)
+    response = generate_completion(summarize_prompt, text, temperature=0.2)
     return response
 
 
@@ -98,13 +98,16 @@ def answer_question(service: str, question: str) -> str:
     response = generate_completion(
         answer_question_prompt,
         f"Question: {question}\n\nQuery Results: {query_results}",
+        temperature=0.3,
     )
     return response
 
 
 def generate_service_description(service: str) -> str:
     user_message = f"Generate a description for {service}"
-    response = generate_completion(service_description_prompt, user_message)
+    response = generate_completion(
+        service_description_prompt, user_message, temperature=0.6
+    )
     return response
 
 
@@ -113,6 +116,9 @@ def generate_search_queries(service: str, description: str) -> SearchQueries:
         f"Generate 10 search queries for {service}. Description: {description}"
     )
     response = generate_structured_completion(
-        search_queries_prompt, user_message, response_format=SearchQueries
+        search_queries_prompt,
+        user_message,
+        response_format=SearchQueries,
+        temperature=0.7,
     )
     return response

@@ -21,7 +21,7 @@ def add_documents(service: str, documents: list[str]):
     collection.add(documents=documents, ids=ids)
 
 
-def query(service: str, query: str, n_results: int = 10):
+def query(service: str, query: str, n_results: int = 5):
     normalized_service_name = normalize_service_name(service)
     collection = chroma_client.get_collection(normalized_service_name)
     results = collection.query(query_texts=[query], n_results=n_results)
