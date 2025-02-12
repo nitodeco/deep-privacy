@@ -1,6 +1,8 @@
-# deep-privacy
+# Deep Privacy 🔒
 
-Deep-privacy is a tool for creating privacy reports about online tools. It uses a combination of web scraping and an LLM pipeline to autonomously search the internet for information and aggregate it into a personalized privacy report.
+Deep-Privacy is a tool for creating privacy reports about online tools. It uses a combination of web scraping and an LLM pipeline to autonomously search the internet for information and aggregate it into a personalized privacy report.
+
+<img src="./docs/ui.jpg" alt="Deep Privacy UI" width="400">
 
 ## Usage
 
@@ -18,4 +20,10 @@ Start the UI:
 
 ```bash
 pixi run ui
+```
+
+Alternatively, you can run the app in the terminal:
+
+```bash
+pixi run cli
 ```
